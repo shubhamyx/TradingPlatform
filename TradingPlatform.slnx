@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TradingPlatform.Api/TradingPlatform.Api.csproj" />
+    <Project Path="src/TradingPlatform.Application/TradingPlatform.Application.csproj" />
+    <Project Path="src/TradingPlatform.Domain/TradingPlatform.Domain.csproj" />
+    <Project Path="src/TradingPlatform.Infrastructure/TradingPlatform.Infrastructure.csproj" />
+    <Project Path="src/TradingPlatform.Web/TradingPlatform.Web.csproj" />
+  </Folder>
+</Solution>
