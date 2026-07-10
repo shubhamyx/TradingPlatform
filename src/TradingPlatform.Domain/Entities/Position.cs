@@ -7,6 +7,7 @@ public class Position
     public Guid Id { get; private set; }
     public Guid UserId { get; private set; }
     public Guid InstrumentId { get; private set; }
+
     public decimal Quantity { get; private set; }
     public decimal AvgEntryPrice { get; private set; }
 
