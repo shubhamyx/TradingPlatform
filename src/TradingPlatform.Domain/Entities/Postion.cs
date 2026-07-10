@@ -1,4 +1,6 @@
-﻿namespace TradingPlatform.Domain.Entities;
+﻿
+
+namespace TradingPlatform.Domain.Entities;
 
 public class Position
 {
