@@ -1,5 +1,7 @@
 using TradingPlatform.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using TradingPlatform.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +11,18 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<TradingPlatformDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-var app = builder.Build();
+
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.Password.RequiredLength = 8;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+})
+    .AddEntityFrameworkStores<TradingPlatformDbContext>()
+    .AddDefaultTokenProviders();
+
+var app = builder.Build(); // Build the application after the registration of services 
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -22,7 +35,9 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapStaticAssets();
 
