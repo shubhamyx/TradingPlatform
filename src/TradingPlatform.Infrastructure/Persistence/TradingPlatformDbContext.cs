@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TradingPlatform.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using TradingPlatform.Infrastructure.Identity;
 
 namespace TradingPlatform.Infrastructure.Persistence;
 
-public class TradingPlatformDbContext : DbContext
+public class TradingPlatformDbContext : IdentityDbContext<ApplicationUser>
 {
     public TradingPlatformDbContext(DbContextOptions<TradingPlatformDbContext> options)
         : base(options)
