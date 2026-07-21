@@ -6,6 +6,7 @@ services:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: "TradingP1atform!"
       MSSQL_PID: "Developer"
+      MSSQL_MEMORY_LIMIT_MB: "2048"
     ports:
       - "1433:1433"
     volumes:
@@ -16,7 +17,6 @@ services:
       timeout: 5s
       retries: 10
       start_period: 30s
-
   redis:
     image: redis:7-alpine
     container_name: tradingplatform-redis
@@ -29,7 +29,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-
 volumes:
   sqlserver-data:
   redis-data:
