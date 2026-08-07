@@ -27,6 +27,11 @@ var app = builder.Build(); // Build the application after the registration of se
 using(var scope = app.Services.CreateScope())
 {
     await SeedRolesAsync(scope.ServiceProvider);
+
+
+
+
+
 }
 
 // Configure the HTTP request pipeline.
