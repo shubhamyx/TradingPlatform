@@ -4,3 +4,10 @@ GET {{TradingPlatform.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+POST {{TradingPlatform.Api_HostAddress}}/api/auth/login
+Content-Type: application/json
+{
+  "email":"shubham123@gmail.com",
+  "password":"Shubham@123"
+}
+###
